@@ -11,7 +11,7 @@ WORKDIR /usr/src/rearc
 # Copy project files to current working directory
 COPY ./src ./src
 COPY ./bin ./bin
-COPY ./package.json./
+COPY ./package.json ./
 
 # Install all dependencies
 #RUN npm Install 
