@@ -1,7 +1,7 @@
 #ARG NODE_VERSION=10
 #RUN if [ ${NODE_VERSION} = 13 ] ; then ${NODE_VERSION} = "13-alpine" ; else ${NODE_VERSION} = ${NODE_VERSION} ; fi
 #FROM node:${NODE_VERSION}
-FROM node:10
+FROM node:10-alpine
 
 #ENV NODE_VERSION = $NODE_VERSION
 
@@ -11,15 +11,13 @@ WORKDIR /usr/src/rearc
 # Copy project files to current working directory
 COPY ./src ./src
 COPY ./bin ./bin
-
-# Copy requirement.txt file
-COPY ./requirements.txt ./
+COPY ./package.json./
 
 # Install all dependencies
 #RUN npm Install 
 
 # install dependencies
-RUN npm install /usr/src/rearc/requirements.txt
+RUN npm install
 
 # Expose container port
 EXPOSE 3000
