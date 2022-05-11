@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: my-rearc-app
-        image: kuga01/rearc:554a774
+        image: rashoow/rearc:dfb4359
         imagePullPolicy: Always
         ports:
         - containerPort: 3000
