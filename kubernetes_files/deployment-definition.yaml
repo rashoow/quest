@@ -30,6 +30,3 @@ spec:
         hostPath:
           path: /var/lib/rearc
           type: DirectoryOrCreate
-© 2022 GitHub, Inc.
-Terms
-Privac
