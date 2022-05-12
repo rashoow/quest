@@ -63,7 +63,17 @@ pipeline {
                     }
                 }
             }
-        }        
+        }
+        
+       stage('Ingress Deploy') {
+            steps{  
+                script {
+                    withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'k8s', namespace: '', serverUrl: '') {
+                    sh ('kubectl apply -f  rearc-ingress.yaml')
+                    }
+                }
+            }
+        }         
     }
 }    
 
